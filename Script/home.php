@@ -1,6 +1,6 @@
 <?php
 
-$title = 'PT Gadai Senyum Sukacita';
+$title = 'PT. GADAI SENYUM SUKACITA';
 include 'layout/header.php';
 
 ?>
