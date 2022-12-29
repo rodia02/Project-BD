@@ -14,14 +14,14 @@ if (isset($_POST['ubah'])) {
   if (update_data($_POST) > 0) {
     echo "<script>
             alert('Data berhasil diubah!');
-            document.location.href = 'pendaftaran.php';
+            document.location.href = 'data-gadai.php';
            </script>";
   }
 
   else {
     echo "<script>
             alert('Data gagal diubah!');
-            document.location.href = 'pendaftaran.php';
+            document.location.href = 'data-gadai.php';
            </script>";
   }
 }

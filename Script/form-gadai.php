@@ -9,14 +9,14 @@ if (isset($_POST['tambah'])) {
     if (create_data($_POST) > 0) {
       echo "<script>
               alert('Data berhasil ditambah!');
-              document.location.href = 'pendaftaran.php';
+              document.location.href = 'data-gadai.php';
              </script>";
     }
   
     else {
       echo "<script>
               alert('Data gagal ditambah!');
-              document.location.href = 'form-pendaftaran.php';
+              document.location.href = 'form-gadai.php';
              </script>";
     }
 }

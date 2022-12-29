@@ -16,14 +16,14 @@ $data_penggadai = select("SELECT * FROM penggadai ORDER BY nomor");
 <div class="container mt-4">
     <h2>DATA PEGADAIAN</h2>
     <div>
-        <a href="form-pendaftaran.php">
+        <a href="form-gadai.php">
             <button type="button" class="btn btn-dark mt-2 mb-4"
             style="float: left; font-family: 'Quicksand';">Formulir Persetujuan Nasabah</button>
         </a>
         <br><br><br>
     </div>
 
-    <table class="table table-hover" id="tabel-pendaftaran">
+    <table class="table table-hover" id="tabel-data">
         <thead>
             <tr>
                 <th>Id Produk</th>

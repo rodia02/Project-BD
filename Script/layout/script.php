@@ -8,7 +8,7 @@
     <!--Untuk memanggil table mana yg mau dibuat plugin datatables-->
     <script>
         $(document).ready(function () {
-            $('#tabel-pendaftaran').DataTable();
+            $('#tabel-data').DataTable();
         });
     </script>
 

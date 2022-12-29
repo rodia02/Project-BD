@@ -40,13 +40,13 @@ session_start();
                         </a>
 
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="visi-misi.php">Lowongan Kerja</a></li>
+                            <li><a class="dropdown-item" href="lowongan-kerja.php">Lowongan Kerja</a></li>
                         </ul>
                     </li>
 
                     <?php if (isset($_SESSION['status_login'])) : ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="pendaftaran.php">DATA PEGADAIAN</a>     
+                        <a class="nav-link" href="data-gadai.php">DATA PEGADAIAN</a>     
                     </li> 
                     <?php endif; ?>
 
