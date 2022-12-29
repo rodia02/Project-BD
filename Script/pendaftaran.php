@@ -30,6 +30,7 @@ $data_penggadai = select("SELECT * FROM penggadai ORDER BY nomor");
                 <th>Nama Nasabah</th>
                 <th>Tanggal Jatuh Tempo</th>
                 <th>Aksi</th>
+                <th>Status</th>
             </tr>  
         </thead>
 
@@ -40,16 +41,21 @@ $data_penggadai = select("SELECT * FROM penggadai ORDER BY nomor");
                 <td><?= $no++; ?></td>
                 <td><?= $penggadai['nama']; ?></td>
                 <td><?= $penggadai['tanggal_jatuh_tempo']; ?></td>
-                <td style="width:30%;">
+                <td>
                     <a href="detail-data.php?nomor=<?= $penggadai['nomor'];?>" class="btn btn-dark">
                         <i class="fa-solid fa-magnifying-glass"></i> Detail
                     </a>
                     <a href="ubah-data.php?nomor=<?= $penggadai['nomor'];?>" class="btn btn-success">
                         <i class="fa-solid fa-pen-to-square"></i> Ubah
                     </a>
+                </td>
+                <td>
+                    <a href="lelang.php?nomor=<?= $penggadai['nomor'];?>" class="btn btn-primary">
+                        <i class="fa-solid fa-bank"></i> Lelang
+                    </a>
                     <a href="hapus-data.php?nomor=<?= $penggadai['nomor'];?>" class="btn btn-danger" 
                         onclick="return confirm('Apakah ingin menghapus data ini?');">
-                        <i class="fa-solid fa-trash"></i> Hapus
+                        <i class="fa-solid fa-trash"></i> Lunas
                     </a>
                 </td>
             </tr>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2022 at 08:18 AM
+-- Generation Time: Dec 29, 2022 at 01:35 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -20,6 +20,18 @@ SET time_zone = "+00:00";
 --
 -- Database: `senyum_sukacita`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lelang`
+--
+
+CREATE TABLE `lelang` (
+  `nomor` int(100) NOT NULL,
+  `Rincian_Barang` varchar(100) NOT NULL,
+  `taksiran` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -74,6 +86,12 @@ INSERT INTO `user` (`username`, `password`, `nama`, `pengguna`) VALUES
 --
 
 --
+-- Indexes for table `lelang`
+--
+ALTER TABLE `lelang`
+  ADD UNIQUE KEY `nomor` (`nomor`);
+
+--
 -- Indexes for table `penggadai`
 --
 ALTER TABLE `penggadai`
@@ -83,6 +101,12 @@ ALTER TABLE `penggadai`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `lelang`
+--
+ALTER TABLE `lelang`
+  MODIFY `nomor` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `penggadai`

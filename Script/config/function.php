@@ -31,6 +31,19 @@ function delete_data($nomor)
     return mysqli_affected_rows($db);
 }
 
+//fungsi salin data
+function salin_data($nomor)
+{
+    global $db;
+
+    //query salin data 
+    $query = "INSERT INTO lelang (Rincian_Barang, taksiran) SELECT Rincian_Barang, taksiran FROM penggadai WHERE  nomor = $nomor";
+
+    mysqli_query($db, $query);
+
+    return mysqli_affected_rows($db);
+}
+
 //fungsi menambahkan data dari formulir pendaftaran
 function create_data($post)
 {

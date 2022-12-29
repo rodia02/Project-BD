@@ -50,6 +50,10 @@ session_start();
                     </li> 
                     <?php endif; ?>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="lelang-data.php">LELANG</a>
+                    </li>
+                    
                 </ul>
                 </div>
                     
