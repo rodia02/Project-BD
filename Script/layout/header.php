@@ -21,8 +21,8 @@ session_start();
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-                </button>
-                
+                </button>  
+
                 <div class="collapse navbar-collapse" id="navbarNav">
         
                 <ul class="navbar-nav">
@@ -31,23 +31,25 @@ session_start();
                         <a class="nav-link" href="home.php">HOME</a>
                     </li>
                     
+                    <li class="nav-item ms-auto"> 
+                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        PROFIL
+                        MORE INFO
                         </a>
 
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="visi-misi.php">Visi dan Misi</a></li>
+                            <li><a class="dropdown-item" href="visi-misi.php">Lowongan Kerja</a></li>
                         </ul>
                     </li>
+
                     <?php if (isset($_SESSION['status_login'])) : ?>
                     <li class="nav-item">
                         <a class="nav-link" href="pendaftaran.php">DATA PEGADAIAN</a>     
                     </li> 
                     <?php endif; ?>
-                    <li class="nav-item ms-auto">
-                        
-                    </li>
+
                 </ul>
                 </div>
                     

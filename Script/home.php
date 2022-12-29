@@ -1,6 +1,6 @@
 <?php
 
-$title = 'SDN 043950';
+$title = 'PT Gadai Senyum Sukacita';
 include 'layout/header.php';
 
 ?>
@@ -163,30 +163,32 @@ include 'layout/header.php';
             word-spacing: 2px;
             line-height: 25px;
         }
+
+        
        
     </style>
 </head>
 
 <body>
     <section class="banner">
-        <center><h1>SD NEGERI 043950 SIGARANG - GARANG</h1></center>
+        <center><h1>PT GADAI SENYUM SUKACITA</h1></center>
     </section>
 
     <div class="container">
         <div class="content-slide">
             <div class="imgslide fade">
                 <div class="numberslide">1 / 3</div>
-                <img src="img/carousel1.jpg" alt="">
+                <img src="img/gadai.jpg" alt="">
             </div>
 
             <div class="imgslide fade">
                 <div class="numberslide">2 / 3</div>
-                <img src="img/carousel2.jpg" alt="">
+                <img src="img/gadai1.jpg" alt="">
             </div>
 
             <div class="imgslide fade">
                 <div class="numberslide">3 / 3</div>
-                <img src="img/carousel3.jpg" alt="">
+                <img src="img/gadai2.png" alt="">
             </div>
 
             <a class="prev" onClick="nextslide(-1)">&#10094;</a>
@@ -242,26 +244,12 @@ include 'layout/header.php';
 
     <section class="about">
         <div class ="container">
-            <h2 style="text-align: center">Tentang Sekolah</h2>
-            <p>SD NEGERI 043950 SIGARANG-GARANG adalah salah satu satuan pendidikan dengan jenjang SD di DESA SIGARANG-GARANG, 
-                Kec. Naman Teran, Kab. Karo, Sumatera Utara. Dalam menjalankan kegiatannya, SD NEGERI 043950 SIGARANG-GARANG 
-                berada di bawah naungan Kementerian Pendidikan dan Kebudayaan. Dengan akreditasi C, 
-                berdasarkan sertifikat 860/BANSM/PROVSU/LL/XII/2018.</p>
-            <p>SD NEGERI 043950 SIGARANG-GARANG menyediakan listrik untuk membantu kegiatan belajar mengajar. 
-                Sumber listrik yang digunakan oleh SD NEGERI 043950 SIGARANG-GARANG berasal dari PLN. 
-                SD NEGERI 043950 SIGARANG-GARANG menyediakan akses internet yang dapat digunakan untuk mendukung kegiatan 
-                belajar mengajar menjadi lebih mudah. Provider yang digunakan SD NEGERI 043950 SIGARANG-GARANG untuk sambungan 
-                internetnya adalah Telkomsel Flash.</p>
+            <h2 style="text-align: center">GADAIKAN BARANG ANDA DENGAN AMAN</h2>
+            <p style="text-align: center" >PT Gadai Senyum Sukacita adalah perusahaan Gadai Swasta yang tarletak dikota Medan, Sudah memperoleh izin dan diawasi oleh Otoritas Jasa Keuangan (OJK) dan juga terdaftar sebagai anggota asosiasi PPGI, yang melayani jasa simpan pinjam (gadai).</p>
         </div>
 
-        <div class="container" style="margin-top: 60px">
-        <h2 style="text-align: center">Pendaftaran Siswa Baru</h2>
-            <p>Telah dibuka pendaftaran siswa baru, tahun ajaran 2022/2023. 
-                Segera cek persyaratan dan isi formulir di link berikut 
-                <a href="pendaftaran.php">link pendaftaran</a>.
-            </p>
-        </div>
     </section>
+    
 
 <?php
 

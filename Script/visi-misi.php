@@ -40,28 +40,31 @@ include 'layout/header.php';
     </head>
     <body>
         <section class="banner">
-            <center><h1>SD NEGERI 043950 SIGARANG - GARANG</h1></center>
+            <center><h1>Lowongan Kerja</h1></center>
         </section>
 
         <section class="about">
             <div class ="container">
-                <h2>VISI</h2>
-                <center><p>Unggul dalam bidang akademik dan non akademik, beriman, berbudaya dan berbudi pekerti luhur dalam perilaku.</p></center>
-                <br><br>
-                <h2>MISI</h2>
-                <p>1. Memacu siswa untuk berprestasi dalam bidang akademik dan non akademik minimal sampai tingkat kabupaten.</p>
-                <p>2. Mewujudkan prestasi sekolah di bidang akademik dan non akademik sampai pada tingkat nasional dan internasional.</p>
-                <p>3. Mewujudkan standar kelulusan dengan nilai minimal 75 sesuai dengan SNP.</p>
-                <p>4. Mewujudkan proses pembelajaran paikem, inovatif, dan kontekstual.</p>
+                <h2>Qualifikasi</h2>
+                <p>1. Berjenis kelamin pria atau laki laki.</p>
+                <p>2. Lulusan min D3 Akutansi.</p>
+                <p>3. Memiliki Ijazaha dan Transkrip nilai asli.</p>
+                <p>4. Berusia max 27 tahun.</p>
                 <p>5. Mewujudkan sumber daya pendidik dan kependidikan yang profesional.</p>
-                <p>6. Meningkatkan kemampuan guru, pegawai, dan siswa dalam penggunaan bahasa asing (Bahasa Inggris).</p>
-                <p>7. Mewujudkan sarana dan prasarana belajar yang lengkap dan memadai sesuai dengan kebutuhan.</p>
-                <p>8. Mewujudkan manajemen sekolah yang transparan dan accuntabel.</p>
-                <p>9. Mewujudkan sistem penilaian yang berkualitas dan akurat.</p>
-                <p>10. Membiasakan warga sekolah untuk melaksanakan 5 S (Senyum, Salam, Sapa, Sopan dan Santun).</p>
-                <p>11. Menciptakan suasana kerja yang harmonis berdasarkan indikator budaya sekolah yaitu kedisiplinan, partisipasi, tanggung jawab, kebersamaan, kejujuran, kekeluargaan, semangat hidup dan semangat belajar.</p>
-                <p>12. Menanamkan sikap saling menghormati di antara warga sekolah.</p>
-                <p>13. Membiasakan peserta didik menjaga kebersihan lingkungan untuk mendukung program clean and green.</p>
+                <p>6. Membawa Surat Lmaran, CV, dan Pas Foto.</p>
+                <p>7. Fotocopy KTP, SIM, KK, Akte Kelahiran.</p>
+                <p>8. Mampu bekerja sama dengan tim.</p>
+                <p>9. Memiliki sifat jujur, teliti, inisiatif, dan cekatan.</p>
+                <br><br>
+                <h2>Fasilitas</h2>
+                <p>1. BPJS KESEHATAN.</p>
+                <p>2. BPJS TENAGA KERJA.</p>
+                <p>3. Gaji UMK.</p>
+                <br><br>
+            </div>
+            <div class ="container">
+                <h2>APABILA TERTARIK, ANDA BISA MENGANTARKAN LAMARAN ANDA KE:</h2>
+                <p style="text-align: center">Jl. Jamin Ginting No 14 Simpang Pos Padang Bulan, Medan, Sumatera Utara</p>
             </div>
         </section>
 

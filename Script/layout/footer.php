@@ -125,27 +125,25 @@
         <div class="footer-left">
             <div>
                 <i class="fa fa-map-marker"></i>
-                <p><span>Indonesia</span> Sumatera Utara, Kab. Karo, Sigarang-garang</p>
+                <p><span>Indonesia</span> Jl. Jamin Ginting No 14 Sp Pos Padang Bulan, Medan, Sumatera Utara</p>
             </div>
             <div>
                 <i class="fa fa-phone"></i>
-                <p>+62 077-777-77</p>
+                <p>+62 853-6004-8712</p>
             </div>
             <div>
                 <i class="fa fa-envelope"></i>
-                <p><a href="mailto:sdnsigaranggarang@gmail.com">sdnsigaranggarang@gmail.com</a></p>
+                <p><a href="mailto:gadaismile2@gmail.com">gadaismile2@gmail.com</a></p>
             </div>
         </div>
 
         <div class="footer-center">
-            <h3>SD NEGERI 043950 SIGARANG-GARANG</h3>
+            <h3>PT GADAI SENYUM SUKACITA</h3>
             <div class="footer-media">
-                <a href="https://www.youtube.com/channel/UChYMmoIrbOCvju9bUfEWCWA"><i class="fa fa-youtube"></i></a>
-                <a href="https://web.facebook.com/search/top/?q=Sigarang+Garang"><i class="fa fa-facebook"></i></a>
-                <a href="https://twitter.com/sigarang2"><i class="fa fa-twitter"></i></a>
-                <a href="https://www.instagram.com/sigaranggarang/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100063725869003"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/gadaisenyumsukacita1/?hl=en"><i class="fa fa-instagram"></i></a>
             </div>
-            <p class="footer-copyright">&copy; copyright 2022 SD Negeri 043950 Sigarang-garang</p>
+            <p class="footer-copyright">&copy; copyright 2022 PT Gadai Senyum Sukacita</p>
         </div>
     </footer>
 
