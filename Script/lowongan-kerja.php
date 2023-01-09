@@ -1,6 +1,6 @@
 <?php
 
-$title = 'Visi dan Misi';
+$title = 'Lowongan Kerja PT. Gadai Sukacita';
 include 'layout/header.php';
 ?>
 
