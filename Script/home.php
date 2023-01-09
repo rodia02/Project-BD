@@ -245,7 +245,7 @@ include 'layout/header.php';
     <section class="about">
         <div class ="container">
             <h2 style="text-align: center">GADAIKAN BARANG ANDA DENGAN AMAN</h2>
-            <p style="text-align: center" >PT Gadai Senyum Sukacita adalah perusahaan Gadai Swasta yang tarletak dikota Medan, Sudah memperoleh izin dan diawasi oleh Otoritas Jasa Keuangan (OJK) dan juga terdaftar sebagai anggota asosiasi PPGI, yang melayani jasa simpan pinjam (gadai).</p>
+            <p style="text-align: center" >PT Gadai Senyum Sukacita adalah perusahaan Gadai Swasta yang terletak dikota Medan, sudah memperoleh izin dan diawasi oleh Otoritas Jasa Keuangan (OJK). PT Gadai Senyum Sukacita juga sudah terdaftar sebagai anggota asosiasi PPGI, yang melayani jasa simpan pinjam (gadai).</p>
         </div>
 
     </section>
