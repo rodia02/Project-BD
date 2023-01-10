@@ -4,16 +4,18 @@ $title = 'Detail Data';
 include 'layout/header.php'; 
 include 'config/function.php';
 
-//mengambil nisn dari data yg dipilih
-$nomor = (int)$_GET['nomor'];
 
-$penggadai = select("SELECT * FROM penggadai WHERE nomor = $nomor")[0];
+$id_produk = (int)$_GET['nomor'];
+
+$penggadai = select("SELECT * FROM penggadai WHERE id_produk = $id_produk")[0];
+$produk = select("SELECT * FROM barang WHERE id_produk = $id_produk")[0];
+$transaksi = select("SELECT * FROM transaksi WHERE id_produk = $id_produk")[0];
 
 ?>
 
 <style type=text/css>
     body {
-        background-color: #D3D3D3;
+        background-color: #cc0;
     }
 </style>
 
@@ -33,12 +35,12 @@ $penggadai = select("SELECT * FROM penggadai WHERE nomor = $nomor")[0];
 
         <tr>
             <td><b>Rincian Barang Jaminan</b></td>
-            <td><?= $penggadai['Rincian_Barang']; ?></td>
+            <td><?= $produk['rincian_barang']; ?></td>
         </tr>
 
         <tr>
             <td><b>Taksiran Harga</b></td>
-            <td><?= $penggadai['taksiran']; ?></td>
+            <td><?= $produk['taksiran']; ?></td>
         </tr>
 
         <tr>
@@ -48,7 +50,7 @@ $penggadai = select("SELECT * FROM penggadai WHERE nomor = $nomor")[0];
 
         <tr>
             <td><b>Jumlah Pinjaman</b></td>
-            <td><?= $penggadai['jlh_pinjaman']; ?></td>
+            <td><?= $transaksi['jlh_pinjaman']; ?></td>
         </tr>
 
         <tr>
@@ -58,12 +60,17 @@ $penggadai = select("SELECT * FROM penggadai WHERE nomor = $nomor")[0];
         
         <tr>
             <td><b>No HP Aktif (No WA)</b></td>
-            <td><?= $penggadai['no_telp']; ?></td>
+            <td><?= $penggadai['no_hp']; ?></td>
+        </tr>
+
+        <tr>
+            <td><b>Jenis Barang</b></td>
+            <td><?= $produk['jenis_barang']; ?></td>
         </tr>
 
         <tr>
             <td><b>Tanggal Jatuh Tempo</b></td>
-            <td><?= $penggadai['tanggal_jatuh_tempo']; ?></td>
+            <td><?= $transaksi['tgl_jatuh_tempo']; ?></td>
         </tr>
 
         

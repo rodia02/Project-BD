@@ -2,11 +2,10 @@
 
 include 'config/function.php';
 
-//menerima nisn yang dipilih administrator
-$nomor = (int)$_GET['nomor'];
+$id_produk = (int)$_GET['id_produk'];
 
-if (salin_data($nomor) > 0) {
-    delete_data($nomor);
+if (lelang($id_produk) > 0) {
+    delete_data($id_produk);
     echo "<script> 
             alert('Barang dilelang!');
             document.location.href = 'lelang-data.php';

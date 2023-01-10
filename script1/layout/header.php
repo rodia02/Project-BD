@@ -47,13 +47,13 @@ session_start();
                     <?php if (isset($_SESSION['status_login'])) : ?>
                     <li class="nav-item">
                         <a class="nav-link" href="data-gadai.php">DATA PEGADAIAN</a>     
-                    </li> 
-                    <?php endif; ?>
-
+                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="lelang-data.php">LELANG</a>
                     </li>
-                    
+                    <?php endif; ?>
+
                 </ul>
                 </div>
                     

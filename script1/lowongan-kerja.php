@@ -1,6 +1,6 @@
 <?php
 
-$title = 'Lowongan Kerja PT. Gadai Sukacita';
+$title = 'Lowongan Kerja';
 include 'layout/header.php';
 ?>
 
@@ -12,7 +12,7 @@ include 'layout/header.php';
         body {
             font-family: Verdana, sans-serif;
             margin: 0;
-            background-color: #D3D3D3;
+            background-color: #cc0;
         }
         
         .banner h1 {

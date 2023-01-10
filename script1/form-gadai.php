@@ -25,7 +25,7 @@ if (isset($_POST['tambah'])) {
 
 <style type=text/css>
     body {
-        background-color: #D3D3D3;
+        background-color: #cc0;
     }
 </style>
 
@@ -46,8 +46,8 @@ if (isset($_POST['tambah'])) {
             </div>
 
             <div class="mb-3">
-                <label for="Rincian_Barang" class="form-label">Rincian Barang Jaminan</label>
-                <textarea class="form-control" id="Rincian_Barang" name="Rincian_Barang" rows="2" style="width: 60%" 
+                <label for="rincian_barang" class="form-label">Rincian Barang Jaminan</label>
+                <textarea class="form-control" id="rincian_barang" name="rincian_barang" rows="2" style="width: 60%" 
                 placeholder="Tertera merk, tipe, serta kondisi" required></textarea>
             </div>
 
@@ -55,6 +55,12 @@ if (isset($_POST['tambah'])) {
                 <label for="taksiran">Taksiran Harga</label>
                 <input type="text" class="form-control" id="taksiran" name="taksiran" style="width: 60%;" 
                 placeholder="Taksiran Harga Barang yang digadai"  required>
+            </div>
+
+            <div class="mb-3">
+                <label for="jlh_pinjaman" class="form-label">Jumlah Pinjaman</label>
+                <input type="text" class="form-control" id="jlh_pinjaman" name="jlh_pinjaman" style="width: 60%;" 
+                placeholder="Jumlah pinjaman yang diajukan"  required>
             </div>
 
         </div>
@@ -66,20 +72,28 @@ if (isset($_POST['tambah'])) {
             </div>
 
             <div class="mb-3">
-                <label for="jlh_pinjaman" class="form-label">Jumlah Pinjaman</label>
-                <input type="text" class="form-control" id="jlh_pinjaman" name="jlh_pinjaman" style="width: 60%;" 
-                placeholder="Jumlah pinjaman yang diajukan"  required>
-            </div>
-
-            <div class="mb-3">
                 <label for="tanggal_lahir">Tanggal Lahir</label>
                 <input class="form-control" id="tanggal_lahir" name="tanggal_lahir" type="date" style="width: 60%" required>
             </div>
 
             <div class="mb-3">
-                <label for="no_telp" class="form-label">No HP Aktif (No WA)</label>
-                <input type="text" class="form-control" id="no_telp" name="no_telp" style="width: 40%;" 
+                <label for="no_hp" class="form-label">No HP Aktif (No WA)</label>
+                <input type="text" class="form-control" id="no_hp" name="no_hp" style="width: 40%;" 
                 placeholder="contoh: 081xxxxxxxxx"  required>
+            </div>
+
+            <div class="mb-3">
+                <label for="jenis_barang" class="form-label">Jenis Barang</label>
+                <select class="form-select" id="jenis_barang" name="jenis_barang" style="width: 60%" required>
+                    <option selected value="">::Pilih Jenis Barang::</option>
+                    <option value="Kendaraan">Kendaraan</option>
+                    <option value="Elektronik">Elektronik</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="tgl_jatuh_tempo">Tanggal Jatuh Tempo</label>
+                <input class="form-control" id="tgl_jatuh_tempo" name="tgl_jatuh_tempo" type="date" style="width: 60%" required>
             </div>
 
         </div>

@@ -3,9 +3,9 @@
 include 'config/function.php';
 
 //menerima nisn yang dipilih administrator
-$nomor = (int)$_GET['nomor'];
+$id_produk = (int)$_GET['id_produk'];
 
-if (delete_data($nomor) > 0) {
+if (delete_data($id_produk) > 0) {
     echo "<script> 
             alert('Data berhasil dihapus!');
             document.location.href = 'data-gadai.php';

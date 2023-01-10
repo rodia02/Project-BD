@@ -3,7 +3,7 @@
 $title = 'PT. GADAI SENYUM SUKACITA';
 include 'layout/header.php';
 include 'config/function.php';
-$data_penggadai = select("SELECT * FROM lelang ORDER BY nomor");
+$data_barang = select("SELECT * FROM pembeli_lelang ORDER BY id_produk");
 ?>
 
 <style type=text/css>
@@ -27,13 +27,13 @@ $data_penggadai = select("SELECT * FROM lelang ORDER BY nomor");
 
         <tbody>
             <?php $no = 1; ?>
-            <?php foreach($data_penggadai as $penggadai) : ?>
+            <?php foreach($data_barang as $barang) : ?>
             <tr>
                 <td><?= $no++; ?></td>
-                <td><?= $penggadai['Rincian_Barang']; ?></td>
-                <td><?= $penggadai['taksiran']; ?></td>
+                <td><?= $barang['rincian_barang']; ?></td>
+                <td><?= $barang['taksiran']; ?></td>
                 <td>
-                    <a href="lelang-data.php?nomor=<?= $penggadai['nomor'];?>" class="btn btn-warning">
+                    <a href="lelang.php?nomor=<?= $barang['id_produk'];?>" class="btn btn-warning">
                         <i class='fa fa-shopping-cart'></i> Beli
                     </a>
             </tr>
