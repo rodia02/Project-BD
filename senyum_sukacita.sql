@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2023 at 09:46 AM
+-- Generation Time: Jan 11, 2023 at 11:41 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -52,7 +52,7 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_produk`, `rincian_barang`, `jenis_barang`, `taksiran`) VALUES
-(1, 'laptop lenovo legion', 'Kendaraan', 15000000);
+(1, 'laptop lenovo legion', 'Elektronik', 1400000);
 
 -- --------------------------------------------------------
 
@@ -247,7 +247,7 @@ ALTER TABLE `pembeli_lelang`
 -- AUTO_INCREMENT for table `penggadai`
 --
 ALTER TABLE `penggadai`
-  MODIFY `id_produk` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_produk` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
