@@ -18,6 +18,17 @@ function select($query)
     return $rows;
 }
 
+//fungsi backup data
+function backup_data($id_produk)
+{
+    global $db;
+
+    $query = "INSERT INTO backup_data(no_kwitansi) SELECT no_kwitansi FROM transaksi where id_produk = $id_produk";
+    $query = "INSERT INTO backup_data(nik) SELECT nik FROM penggadai where id_produk = $id_produk";
+    $query = "INSERT INTO backup_data(id_produk) SELECT id_produk FROM barang where id_produk = $id_produk";
+    
+}
+
 //fungsi menghapus data 
 function delete_data($id_produk)
 {
@@ -50,7 +61,7 @@ function delete_transaksi($id_produk)
     global $db;
 
     //query hapus pembeli
-    $query = "DELETE FROM pembeli_lelang WHERE id_produk = $id_produk";
+    $query = "DELETE FROM transaksi WHERE id_produk = $id_produk";
 
     mysqli_query($db, $query);
 
