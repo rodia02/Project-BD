@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2023 at 08:34 AM
+-- Generation Time: Jan 11, 2023 at 08:43 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -34,6 +34,13 @@ CREATE TABLE `barang` (
   `taksiran` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `barang`
+--
+
+INSERT INTO `barang` (`id_produk`, `rincian_barang`, `jenis_barang`, `taksiran`) VALUES
+(1, 'laptop lenovo legion', 'Kendaraan', 15000000);
+
 -- --------------------------------------------------------
 
 --
@@ -45,8 +52,16 @@ CREATE TABLE `detail_data_karyawan` (
   `password` varchar(50) NOT NULL,
   `nik` varchar(16) NOT NULL,
   `alamat` varchar(200) NOT NULL,
-  `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL
+  `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
+  `id_produk` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `detail_data_karyawan`
+--
+
+INSERT INTO `detail_data_karyawan` (`nama`, `password`, `nik`, `alamat`, `jenis_kelamin`, `id_produk`) VALUES
+('Rodiatul', '211401038', '12214', 'medan', 'Perempuan', 1);
 
 -- --------------------------------------------------------
 
@@ -60,6 +75,13 @@ CREATE TABLE `karyawan` (
   `gaji` int(8) NOT NULL,
   `nik` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `karyawan`
+--
+
+INSERT INTO `karyawan` (`id_pegawai`, `no_hp`, `gaji`, `nik`) VALUES
+(19001, '087805141217', 3000000, '12214');
 
 -- --------------------------------------------------------
 
@@ -89,6 +111,13 @@ CREATE TABLE `penggadai` (
   `no_hp` varchar(14) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `penggadai`
+--
+
+INSERT INTO `penggadai` (`id_produk`, `nama`, `nik`, `tanggal_lahir`, `alamat`, `no_hp`) VALUES
+(1, 'rodia', '21140103855', '2022-08-01', 'Medan', '087805141217');
+
 -- --------------------------------------------------------
 
 --
@@ -104,6 +133,13 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `transaksi`
+--
+
+INSERT INTO `transaksi` (`no_kwitansi`, `jlh_pinjaman`, `tgl_jatuh_tempo`, `id_produk`, `id_pegawai`) VALUES
+(23001, 5000000, '2023-03-11', 1, 19001);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -117,7 +153,8 @@ ALTER TABLE `barang`
 -- Indexes for table `detail_data_karyawan`
 --
 ALTER TABLE `detail_data_karyawan`
-  ADD PRIMARY KEY (`nik`);
+  ADD PRIMARY KEY (`nik`),
+  ADD KEY `index` (`id_produk`);
 
 --
 -- Indexes for table `karyawan`
@@ -156,13 +193,19 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_produk` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_produk` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `detail_data_karyawan`
+--
+ALTER TABLE `detail_data_karyawan`
+  MODIFY `id_produk` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id_pegawai` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pegawai` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19002;
 
 --
 -- AUTO_INCREMENT for table `pembeli_lelang`
@@ -174,17 +217,23 @@ ALTER TABLE `pembeli_lelang`
 -- AUTO_INCREMENT for table `penggadai`
 --
 ALTER TABLE `penggadai`
-  MODIFY `id_produk` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_produk` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `no_kwitansi` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `no_kwitansi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23002;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `detail_data_karyawan`
+--
+ALTER TABLE `detail_data_karyawan`
+  ADD CONSTRAINT `detail_data_karyawan_ibfk_1` FOREIGN KEY (`id_produk`) REFERENCES `barang` (`id_produk`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `karyawan`
