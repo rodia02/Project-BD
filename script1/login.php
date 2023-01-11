@@ -11,7 +11,7 @@ if(isset($_POST['login'])){
     if(mysqli_num_rows($cek)> 0){
 
         $d = mysqli_fetch_object($cek);
-         if(md5($pass) == $d->password) {
+         if(($pass) == $d->password) {
             $_SESSION['status_login'] = true;
             $_SESSION['nik']=$d->nik;
             

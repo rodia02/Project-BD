@@ -37,7 +37,7 @@ function delete_produk($id_produk)
     global $db;
 
     //query hapus data produk
-    $query = "DELETE FROM produk WHERE id_produk = $id_produk";
+    $query = "DELETE FROM barang WHERE id_produk = $id_produk";
 
     mysqli_query($db, $query);
 
@@ -50,12 +50,9 @@ function delete_transaksi($id_produk)
     global $db;
 
     //query hapus pembeli
-    $query = "DELETE FROM pembeli WHERE id_produk = $id_produk";
-    //queri hapus transaksi
-    $query1 = "DELETE FROM transaksi WHERE id_produk = $id_produk";
+    $query = "DELETE FROM pembeli_lelang WHERE id_produk = $id_produk";
 
     mysqli_query($db, $query);
-    mysqli_query($db, $query1);
 
     return mysqli_affected_rows($db);
 }
@@ -78,11 +75,8 @@ function accept_transaksi($id_produk)
     global $db;
 
     $query = "DELETE FROM transaksi WHERE id_produk = $id_produk";
-    $query1 = "DELETE FROM pembeli WHERE id_produk = $id_produk";
 
     mysqli_query($db, $query);
-    mysqli_query($db, $query1);
-
     return mysqli_affected_rows($db);
 }
 
@@ -113,6 +107,22 @@ function create_data($post)
 
    return mysqli_affected_rows($db);
 }   
+//fungsi menambahkan data dari formulir lelang
+function create_pembelilelang($post)
+{
+    global $db;
+
+    $nama = $post['nama'];
+    $nik = $post['nik'];
+    $no_hp = $post['no_hp'];
+
+    //query tambah data
+    $query = "INSERT INTO pembeli_lelang VALUES(null, '$nama', '$nik', '$no_hp')";
+
+    mysqli_query($db, $query);
+
+    return mysqli_affected_rows($db);
+} 
 
 //fungsi update data 
 function update_data($post)
@@ -133,7 +143,7 @@ function update_data($post)
 
     //query ubah data
     $query = "UPDATE penggadai SET nama = '$nama', no_hp = '$no_hp', tanggal_lahir = '$tanggal_lahir', 
-    nik = '$nik', alamat = '$alamat',  WHERE id_produk = $id_produk";
+    nik = '$nik', alamat = '$alamat' WHERE id_produk = $id_produk";
     //query ubah data produk
     $query1 = "UPDATE barang SET rincian_barang = '$rincian_barang', taksiran = '$taksiran', jenis_barang = '$jenis_barang' WHERE id_produk = $id_produk";
     $query2 = "UPDATE transaksi SET tgl_jatuh_tempo = '$tgl_jatuh_tempo', jlh_pinjaman = '$jlh_pinjaman' WHERE id_produk = $id_produk";

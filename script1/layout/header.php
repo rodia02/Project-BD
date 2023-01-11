@@ -41,6 +41,7 @@ session_start();
 
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="lowongan-kerja.php">Lowongan Kerja</a></li>
+                            <li><a class="dropdown-item" href="data-karyawan.php">Karyawan</a></li>
                         </ul>
                     </li>
 

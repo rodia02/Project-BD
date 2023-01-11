@@ -33,7 +33,7 @@ $data_barang = select("SELECT * FROM pembeli_lelang ORDER BY id_produk");
                 <td><?= $barang['rincian_barang']; ?></td>
                 <td><?= $barang['taksiran']; ?></td>
                 <td>
-                    <a href="lelang.php?nomor=<?= $barang['id_produk'];?>" class="btn btn-warning">
+                    <a href="lelang.php?id_produk=<?= $barang['id_produk'];?>" class="btn btn-warning">
                         <i class='fa fa-shopping-cart'></i> Beli
                     </a>
             </tr>
