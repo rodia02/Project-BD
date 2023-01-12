@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2023 at 11:41 AM
+-- Generation Time: Jan 12, 2023 at 01:47 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -24,19 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `backup_data`
---
-
-CREATE TABLE `backup_data` (
-  `no_kwitansi` int(5) NOT NULL,
-  `nik` varchar(16) NOT NULL,
-  `id_produk` int(8) NOT NULL,
-  `nomor` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `barang`
 --
 
@@ -52,7 +39,8 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_produk`, `rincian_barang`, `jenis_barang`, `taksiran`) VALUES
-(1, 'laptop lenovo legion', 'Elektronik', 1400000);
+(1, 'laptop lenovo legion', 'Elektronik', 1400000),
+(2, 'Aerox', 'Kendaraan', 50000000);
 
 -- --------------------------------------------------------
 
@@ -65,16 +53,15 @@ CREATE TABLE `detail_data_karyawan` (
   `password` varchar(50) NOT NULL,
   `nik` varchar(16) NOT NULL,
   `alamat` varchar(200) NOT NULL,
-  `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
-  `id_produk` int(8) NOT NULL
+  `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `detail_data_karyawan`
 --
 
-INSERT INTO `detail_data_karyawan` (`nama`, `password`, `nik`, `alamat`, `jenis_kelamin`, `id_produk`) VALUES
-('Rodiatul', '211401038', '12214', 'medan', 'Perempuan', 1);
+INSERT INTO `detail_data_karyawan` (`nama`, `password`, `nik`, `alamat`, `jenis_kelamin`) VALUES
+('Rodiatul', '211401038', '12214', 'medan', 'Perempuan');
 
 -- --------------------------------------------------------
 
@@ -86,16 +73,15 @@ CREATE TABLE `karyawan` (
   `id_pegawai` int(8) NOT NULL,
   `no_hp` varchar(14) NOT NULL,
   `gaji` int(8) NOT NULL,
-  `nik` varchar(16) NOT NULL,
-  `id_produk` int(8) NOT NULL
+  `nik` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `karyawan`
 --
 
-INSERT INTO `karyawan` (`id_pegawai`, `no_hp`, `gaji`, `nik`, `id_produk`) VALUES
-(19001, '087805141217', 3000000, '12214', 1);
+INSERT INTO `karyawan` (`id_pegawai`, `no_hp`, `gaji`, `nik`) VALUES
+(19001, '087805141217', 3000000, '12214');
 
 -- --------------------------------------------------------
 
@@ -117,6 +103,7 @@ CREATE TABLE `pembeli_lelang` (
 --
 
 CREATE TABLE `penggadai` (
+  `id_penggadai` int(11) NOT NULL,
   `id_produk` int(8) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `nik` varchar(16) NOT NULL,
@@ -129,8 +116,9 @@ CREATE TABLE `penggadai` (
 -- Dumping data for table `penggadai`
 --
 
-INSERT INTO `penggadai` (`id_produk`, `nama`, `nik`, `tanggal_lahir`, `alamat`, `no_hp`) VALUES
-(1, 'rodia', '21140103855', '2022-08-01', 'Medan', '087805141217');
+INSERT INTO `penggadai` (`id_penggadai`, `id_produk`, `nama`, `nik`, `tanggal_lahir`, `alamat`, `no_hp`) VALUES
+(2, 2, 'Johana', '15645465', '2003-03-02', 'medan', '08365656'),
+(1, 1, 'rodia', '21140103855', '2003-08-01', 'Medan', '087805141217');
 
 -- --------------------------------------------------------
 
@@ -143,28 +131,21 @@ CREATE TABLE `transaksi` (
   `jlh_pinjaman` int(8) NOT NULL,
   `tgl_jatuh_tempo` date NOT NULL,
   `id_produk` int(8) NOT NULL,
-  `id_pegawai` int(8) NOT NULL
+  `id_pegawai` int(8) NOT NULL,
+  `jenis_transaksi` enum('Gadai','Lelang') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `transaksi`
 --
 
-INSERT INTO `transaksi` (`no_kwitansi`, `jlh_pinjaman`, `tgl_jatuh_tempo`, `id_produk`, `id_pegawai`) VALUES
-(23001, 5000000, '2023-03-11', 1, 19001);
+INSERT INTO `transaksi` (`no_kwitansi`, `jlh_pinjaman`, `tgl_jatuh_tempo`, `id_produk`, `id_pegawai`, `jenis_transaksi`) VALUES
+(23001, 5000000, '2023-03-11', 1, 19001, 'Gadai'),
+(23006, 3000000, '2023-03-09', 2, 19001, '');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `backup_data`
---
-ALTER TABLE `backup_data`
-  ADD PRIMARY KEY (`nomor`),
-  ADD UNIQUE KEY `no_kwitansi` (`no_kwitansi`),
-  ADD UNIQUE KEY `nik` (`nik`,`id_produk`),
-  ADD KEY `id_produk` (`id_produk`);
 
 --
 -- Indexes for table `barang`
@@ -176,16 +157,14 @@ ALTER TABLE `barang`
 -- Indexes for table `detail_data_karyawan`
 --
 ALTER TABLE `detail_data_karyawan`
-  ADD PRIMARY KEY (`nik`),
-  ADD KEY `index` (`id_produk`);
+  ADD PRIMARY KEY (`nik`);
 
 --
 -- Indexes for table `karyawan`
 --
 ALTER TABLE `karyawan`
   ADD PRIMARY KEY (`id_pegawai`),
-  ADD UNIQUE KEY `nik` (`nik`),
-  ADD UNIQUE KEY `id_produk` (`id_produk`);
+  ADD UNIQUE KEY `nik` (`nik`);
 
 --
 -- Indexes for table `pembeli_lelang`
@@ -199,37 +178,26 @@ ALTER TABLE `pembeli_lelang`
 --
 ALTER TABLE `penggadai`
   ADD PRIMARY KEY (`nik`),
-  ADD UNIQUE KEY `nomor` (`id_produk`);
+  ADD UNIQUE KEY `nomor` (`id_produk`),
+  ADD KEY `index` (`id_penggadai`);
 
 --
 -- Indexes for table `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`no_kwitansi`),
-  ADD UNIQUE KEY `id_produk` (`id_produk`),
-  ADD UNIQUE KEY `id_pegawai` (`id_pegawai`);
+  ADD KEY `id_produk` (`id_produk`) USING BTREE,
+  ADD KEY `id_pegawai` (`id_pegawai`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `backup_data`
---
-ALTER TABLE `backup_data`
-  MODIFY `nomor` int(10) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_produk` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `detail_data_karyawan`
---
-ALTER TABLE `detail_data_karyawan`
-  MODIFY `id_produk` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_produk` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `karyawan`
@@ -247,38 +215,23 @@ ALTER TABLE `pembeli_lelang`
 -- AUTO_INCREMENT for table `penggadai`
 --
 ALTER TABLE `penggadai`
-  MODIFY `id_produk` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_penggadai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `no_kwitansi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23002;
+  MODIFY `no_kwitansi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23007;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `backup_data`
---
-ALTER TABLE `backup_data`
-  ADD CONSTRAINT `backup_data_ibfk_1` FOREIGN KEY (`no_kwitansi`) REFERENCES `transaksi` (`no_kwitansi`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `backup_data_ibfk_2` FOREIGN KEY (`nik`) REFERENCES `penggadai` (`nik`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `backup_data_ibfk_3` FOREIGN KEY (`id_produk`) REFERENCES `barang` (`id_produk`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---
--- Constraints for table `detail_data_karyawan`
---
-ALTER TABLE `detail_data_karyawan`
-  ADD CONSTRAINT `detail_data_karyawan_ibfk_1` FOREIGN KEY (`id_produk`) REFERENCES `barang` (`id_produk`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  ADD CONSTRAINT `karyawan_ibfk_1` FOREIGN KEY (`nik`) REFERENCES `detail_data_karyawan` (`nik`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `karyawan_ibfk_2` FOREIGN KEY (`id_produk`) REFERENCES `barang` (`id_produk`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `karyawan_ibfk_1` FOREIGN KEY (`nik`) REFERENCES `detail_data_karyawan` (`nik`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `pembeli_lelang`
