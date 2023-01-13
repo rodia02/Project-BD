@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2023 at 03:45 AM
+-- Generation Time: Jan 13, 2023 at 04:45 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -40,9 +40,11 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_produk`, `rincian_barang`, `jenis_barang`, `taksiran`, `label_barang`) VALUES
-(1, 'laptop lenovo legion', 'Elektronik', 1400000, 'Gadai'),
-(2, 'laptop lenovo legion', 'Elektronik', 1400000, 'Gadai'),
-(3, 'Iphone', 'Elektronik', 14000000, 'Lelang');
+(1, 'Laptop Lenovo Legion 5i, 512GB SSD, RAM 16GB', 'Elektronik', 16000000, 'Lelang'),
+(2, 'iPhone 11, 128GB', 'Elektronik', 8000000, 'Gadai'),
+(3, 'iPad Pro M2 Chip (2022), 256GB', 'Elektronik', 14000000, 'Gadai'),
+(4, 'Macbook Air 2022 M2 8/512GB Space Gray', 'Elektronik', 20000000, 'Gadai'),
+(5, 'iPad mini 6 Wifi Only, 256GB Pink', 'Elektronik', 8000000, 'Gadai');
 
 -- --------------------------------------------------------
 
@@ -63,7 +65,9 @@ CREATE TABLE `detail_data_karyawan` (
 --
 
 INSERT INTO `detail_data_karyawan` (`nama`, `password`, `nik`, `alamat`, `jenis_kelamin`) VALUES
-('Rodiatul', '211401038', '12214', 'medan', 'Perempuan');
+('Agung Rotama Sibarani', 'agung', '1211031709930004', 'Jl. Kopiraya V, Medan Tuntungan', 'Laki-laki'),
+('Mariani', 'mariani', '1271016108710002', 'Jl. Ayahanda No.132, Sei Putih', 'Perempuan'),
+('Simon Juanda PN. Simarmata', 'simon', '1271040201890007', 'Jl. Menteng  II GG Jermal II No.14, Medan Denai', 'Laki-laki');
 
 -- --------------------------------------------------------
 
@@ -83,7 +87,9 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`id_pegawai`, `no_hp`, `gaji`, `nik`) VALUES
-(19001, '087805141217', 3000000, '12214');
+(19001, '082351929399', 3000000, '1271016108710002'),
+(19002, '082356478965', 3000000, '1271040201890007'),
+(19003, '089349672345', 3000000, '1211031709930004');
 
 -- --------------------------------------------------------
 
@@ -92,19 +98,11 @@ INSERT INTO `karyawan` (`id_pegawai`, `no_hp`, `gaji`, `nik`) VALUES
 --
 
 CREATE TABLE `pembeli_lelang` (
-  `id_penggadai` int(8) NOT NULL,
   `id_produk` int(8) NOT NULL,
   `nik` varchar(16) NOT NULL,
   `no_hp` varchar(14) NOT NULL,
   `nama` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `pembeli_lelang`
---
-
-INSERT INTO `pembeli_lelang` (`id_penggadai`, `id_produk`, `nik`, `no_hp`, `nama`) VALUES
-(1, 3, '123456', '1234567', 'Salsa');
 
 -- --------------------------------------------------------
 
@@ -127,8 +125,11 @@ CREATE TABLE `penggadai` (
 --
 
 INSERT INTO `penggadai` (`id_penggadai`, `id_produk`, `nama`, `nik`, `tanggal_lahir`, `alamat`, `no_hp`) VALUES
-(2, 2, 'Johana', '15645465', '2003-03-12', 'medan', '08365656'),
-(1, 1, 'rodia', '21140103855', '2003-08-01', 'Medan', '087805141217');
+(5, 5, 'Jamaludin', '1115062003640001', '1964-03-20', 'Jl. Buya Hamka No. 131, Medan Johor\r\n\r\n', '082354126785'),
+(1, 1, 'Muhammad Fathyansari Pasaribu', '1271031001850010', '1985-01-10', 'Jl. MawarXII Lk.XIX No.114 Helvetia Tengah, Medan', '082351298939'),
+(3, 3, 'Sofian', '1271070302710001', '1971-02-03', 'Jl. Flamboyan GG. Manggis Lk.III,Medan Tuntungan', '089545637281'),
+(2, 2, 'Debby Siswanti Tambunan', '1276014109940001', '1994-09-01', 'Jl. Jendral Gatot Subroto LK. I Padang Hulu, Tebing Tinggi', '08167568976'),
+(4, 4, 'Daud Al Fatah', '3216061805990002', '1994-05-18', 'Jl. Jatimulya No.18 Tambun Selatan\r\n\r\n', '089523789679');
 
 -- --------------------------------------------------------
 
@@ -149,8 +150,11 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`no_kwitansi`, `jlh_pinjaman`, `tgl_jatuh_tempo`, `id_produk`, `id_pegawai`) VALUES
-(23001, 5000000, '2023-03-11', 1, 19001),
-(23006, 3000000, '2023-03-09', 2, 19001);
+(23001, 8000000, '2023-04-13', 1, 19001),
+(23002, 3500000, '2023-03-09', 2, 19002),
+(23003, 7000000, '2023-03-09', 3, 19002),
+(23004, 11000000, '2023-04-28', 4, 19003),
+(23005, 5000000, '2023-04-28', 5, 19003);
 
 --
 -- Indexes for dumped tables
@@ -180,8 +184,7 @@ ALTER TABLE `karyawan`
 --
 ALTER TABLE `pembeli_lelang`
   ADD PRIMARY KEY (`nik`),
-  ADD UNIQUE KEY `INDEX` (`id_produk`) USING BTREE,
-  ADD KEY `id_pembeli` (`id_penggadai`);
+  ADD UNIQUE KEY `nomor` (`id_produk`);
 
 --
 -- Indexes for table `penggadai`
@@ -207,25 +210,25 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_produk` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_produk` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `id_pegawai` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19002;
+  MODIFY `id_pegawai` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19004;
 
 --
 -- AUTO_INCREMENT for table `pembeli_lelang`
 --
 ALTER TABLE `pembeli_lelang`
-  MODIFY `id_penggadai` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_produk` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `penggadai`
 --
 ALTER TABLE `penggadai`
-  MODIFY `id_penggadai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_penggadai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `transaksi`

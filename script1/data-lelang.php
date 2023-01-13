@@ -9,7 +9,7 @@ $data_barang = select("SELECT * FROM transaksi AS t INNER JOIN
 
 <style type=text/css>
     body {
-        background-color: #D3D3D3;
+        background-color: #cc0;
     }
 </style>
 
