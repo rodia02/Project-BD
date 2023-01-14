@@ -14,7 +14,7 @@ $transaksi = select("SELECT * FROM transaksi WHERE id_produk = $id_produk")[0];
 
 <style type=text/css>
     body {
-        background-color: #D3D3D3;
+        background-color: #cc0;
     }
 </style>
 <div class="container mt-4">

@@ -14,7 +14,7 @@ $data_karyawan = select("SELECT * FROM detail_data_karyawan ORDER BY nik");
         body {
             font-family: Verdana, sans-serif;
             margin: 0;
-            background-color: #D3D3D3;
+            background-color: #cc0;
         }
         
         .banner {

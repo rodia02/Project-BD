@@ -20,7 +20,7 @@ if (!isset($_SESSION['status_login'])|| $_SESSION["status_login"] !== true){
 
 <style type=text/css>
     body {
-        background-color: #D3D3D3;
+        background-color: #cc0;
     }
 </style>
 
