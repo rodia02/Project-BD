@@ -37,6 +37,13 @@ $data_karyawan = select("SELECT * FROM detail_data_karyawan ORDER BY nik");
 </section>
 
 <div class="container mt-4">
+    <div>
+        <a href="form-karyawan.php">
+            <button type="button" class="btn btn-dark mt-2 mb-4"
+            style="float: left; font-family: 'Quicksand';">Formulir Tambah Karyawan</button>
+        </a>
+        <br><br><br>
+    </div>
 
 <table class="table table-hover" id="tabel-data">
         <thead>

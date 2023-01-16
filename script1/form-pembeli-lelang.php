@@ -59,7 +59,7 @@ if (isset($_POST['tambah'])) {
                 include "koneksi.php";
                 $query = mysqli_query($db,"SELECT * FROM barang WHERE label_barang='Lelang'") or die (mysqli_error($db));
                 while($data = mysqli_fetch_array($query)){
-                    echo "<option value=$data[id_produk]> $data[rincian_barang] </option>";
+                    echo "<option value=$data[rincian_barang]> $data[rincian_barang] </option>";
                 }
                 ?>
                 </select>

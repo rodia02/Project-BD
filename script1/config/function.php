@@ -131,18 +131,43 @@ function create_pembelilelang($post)
 {
     global $db;
 
-    $nama = $post['nama'];
+    $id_produk = $post['id_produk'];
     $nik = $post['nik'];
     $no_hp = $post['no_hp'];
-    $id_produk = $post['id_produk'];
+    $nama = $post['nama'];
+    
 
     //query tambah data
-    $query = "INSERT INTO pembeli_lelang VALUES(null, '$nama', '$nik', '$no_hp', '$id_produk')";
+    $query = "INSERT INTO pembeli_lelang VALUES(null,  '$id_produk', '$nik', '$no_hp','$nama')";
 
     mysqli_query($db, $query);
 
     return mysqli_affected_rows($db);
 } 
+
+//fungsi menambahkan data dari formulir karyawan
+function create_karyawan($post)
+{
+    global $db;
+
+    $nama = $post['nama'];
+    $password = $post['password'];
+    $nik = $post['nik'];
+    $jenis_kelamin = $post['jenis_kelamin'];
+    $no_hp= $post['no_hp'];
+    $alamat = $post['alamat'];
+    $gaji = $post['gaji'];
+    
+    //query tambah data
+    $query = "INSERT INTO detail_data_karyawan VALUES(null,  '$nama', '$password', '$nik','$jenis_kelamin', '$alamat')";
+    $query1 = "INSERT INTO karyawan VALUES(null, '$nik', '$no_hp', '$gaji')";
+
+    mysqli_query($db, $query);
+    mysqli_query($db, $query1);
+
+    return mysqli_affected_rows($db);
+} 
+
 
 //fungsi update data 
 function update_data($post)

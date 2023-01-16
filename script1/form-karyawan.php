@@ -30,7 +30,7 @@ if (isset($_POST['tambah'])) {
 </style>
 
 <div class="container mt-4">
-    <h3>Formulir Persetujuan Nasabah</h3>
+    <h3>Formulir Tambah Karyawan</h3>
 
     <form action="" method="post">
     <div class="row mt-4" style="border: 1px solid grey;">
@@ -41,19 +41,25 @@ if (isset($_POST['tambah'])) {
             </div>
 
             <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="text" class="form-control" id="password" name="password" style="width: 60%;" 
+                placeholder="PASSWORD KARYAWAN"  required>
+            </div>
+
+            <div class="mb-3">
                 <label for="nik" class="form-label">NIK (Nomor Induk Kependudukan)</label>
                 <input type="number" class="form-control" id="nik" name="nik" style="width:60%" placeholder="NIK KARYAWAN"  required>
             </div>
 
             <div class="mb-3">
-                <label for="Rincian_Barang" class="form-label">Jenis Kelamin</label><br>
+                <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label><br>
                 <input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki<br>
                 <input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan<br>
             </div>
 
             <div class="mb-3">
-                <label for="no_telp" class="form-label">No HP Aktif (No WA)</label>
-                <input type="text" class="form-control" id="no_telp" name="no_telp" style="width: 60%;" 
+                <label for="no_hp" class="form-label">No HP Aktif (No WA)</label>
+                <input type="text" class="form-control" id="no_hp" name="no_hp" style="width: 60%;" 
                 placeholder="contoh: 081xxxxxxxxx"  required>
             </div>
 
@@ -66,15 +72,9 @@ if (isset($_POST['tambah'])) {
             </div>
 
             <div class="mb-3">
-                <label for="gaji_pokok" class="form-label">Gaji Pokok</label>
-                <input type="text" class="form-control" id="gaji_pokok" name="gaji_pokok" style="width: 60%;" 
+                <label for="gaji" class="form-label">Gaji</label>
+                <input type="text" class="form-control" id="gaji" name="gaji" style="width: 60%;" 
                 placeholder="Jumlah gaji yang diajukan"  required>
-            </div>
-
-            <div class="mb-3">
-                <label for="gaji_tunjangan" class="form-label">Gaji Tunjangan</label>
-                <input type="text" class="form-control" id="gaji_tunjangan" name="gaji_tunjangan" style="width: 60%;" 
-                placeholder="Jumlah gaji tunjangan"  required>
             </div>
 
         </div>

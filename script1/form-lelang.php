@@ -28,7 +28,7 @@ if (isset($_POST['tambah'])) {
 
 <style type=text/css>
     body {
-        background-color: #cc0;
+        background-color: #D3D3D3;
     }
 </style>
 
